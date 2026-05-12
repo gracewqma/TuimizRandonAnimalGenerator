@@ -1,5 +1,6 @@
 # Tuliz Random Animal Generator
-![License](https://img.shields.io/badge/license-MIT-green) ![Repo Size](https://img.shields.io/github/repo-size/gracewqma/TuimizRandonAnimalGenerator)![Issues](https://img.shields.io/github/issues/gracewqma/TuimizRandonAnimalGenerator)![Contributors](https://img.shields.io/github/contributors/gracewqma/TuimizRandonAnimalGenerator)![Made With](https://img.shields.io/badge/Made%20With-%E2%9C%A8%20HTML%20%E2%9C%A8-blueviolet)![Stars](https://img.shields.io/github/stars/gracewqma/TuimizRandonAnimalGenerator)  
+![License](https://img.shields.io/badge/license-MIT-green) ![Repo Size](https://img.shields.io/github/repo-size/gracewqma/TuimizRandonAnimalGenerator)![Issues](https://img.shields.io/github/issues/gracewqma/TuimizRandonAnimalGenerator)![Contributors](https://img.shields.io/github/contributors/gracewqma/TuimizRandonAnimalGenerator)![Made With](https://img.shields.io/badge/Made%20With-%E2%9C%A8%20HTML%20%E2%9C%A8-blueviolet)![App](https://img.shields.io/badge/App%20made%20With-%E2%9C%A8%20RUST%20%E2%9C%A8-red)![Stars](https://img.shields.io/github/stars/gracewqma/TuimizRandonAnimalGenerator)
+
 Hello! This repo is for the iconic IG tool, Random Animal Generator by Tuimiz!
 
 ## About
