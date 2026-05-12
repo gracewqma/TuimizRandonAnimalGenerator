@@ -1,0 +1,17 @@
+# Rust / Cargo  -  prevent build artifacts from being tracked and upload unnecessary files to repositories
+target/
+**/target/
+
+# Tauri - prevent unnecessary files from being uploaded to repositories
+**/gen/*
+
+# Node
+node_modules/
+package-lock.json
+
+# IDE
+.vscode/
+
+# OS - thrash files from OS, if u want to, you can remove it, it's a recommendation  - k159
+.DS_Store
+Thumbs.db

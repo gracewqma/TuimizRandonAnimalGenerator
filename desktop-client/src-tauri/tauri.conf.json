@@ -1,0 +1,39 @@
+{
+  "$schema": "https://raw.githubusercontent.com/nicedoc/schemas/refs/heads/main/tauri.schema.json",
+  "productName": "Tuimiz Animal Generator",
+  "version": "1.0.0",
+  "identifier": "com.tuimiz.animal-generator",
+  "build": {
+    "frontendDist": "../src",
+    "devUrl": "http://localhost:1420",
+    "beforeDevCommand": "",
+    "beforeBuildCommand": ""
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "title": "Random Animal Generator by Tuimiz",
+        "width": 480,
+        "height": 780,
+        "resizable": false,
+        "center": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "resources": ["../parts/*"],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}
