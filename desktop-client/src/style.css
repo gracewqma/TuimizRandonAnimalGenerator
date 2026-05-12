@@ -1,0 +1,179 @@
+body {
+  font-family: 'MV Boli', 'Comic Sans MS', 'Segoe Print', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background-color: #ead6f1;
+  overflow-y: auto;
+}
+
+.container {
+  width: 90%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+  margin-top: 10px;
+  padding-bottom: 20px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2px;
+  margin-top: 8px;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-height: 36px;
+}
+
+button {
+  width: 80px;
+  padding: 6px 8px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffeea6;
+  color: #000;
+  font-family: 'MV Boli', 'Comic Sans MS', 'Segoe Print', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  flex-shrink: 0;
+  transition: background-color 0.15s;
+}
+
+button:hover {
+  background-color: #eadb99;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.number {
+  flex-grow: 1;
+  text-align: left;
+  font-size: 13px;
+  font-weight: bold;
+  color: #444;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.number:empty::after {
+  content: '\00a0';
+}
+
+.counter {
+  font-size: 11px;
+  color: #999;
+  white-space: nowrap;
+  margin-left: auto;
+  min-width: 65px;
+  text-align: right;
+}
+
+/* Reset button */
+.reset-container {
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+#resetBtn {
+  width: auto;
+  padding: 8px 20px;
+  font-size: 14px;
+  background-color: #d4a9dc;
+  color: #fff;
+  border-radius: 8px;
+}
+
+#resetBtn:hover {
+  background-color: #c08ec8;
+}
+
+#resetBtn:disabled {
+  opacity: 0.6;
+}
+
+/* Arachnophobia warning overlay */
+.warning-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.warning-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px 32px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  max-width: 300px;
+}
+
+.warning-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: #c0392b;
+  margin: 0 0 16px 0;
+}
+
+.warning-close {
+  width: auto;
+  padding: 8px 28px;
+  font-size: 14px;
+  background-color: #c0392b;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.warning-close:hover {
+  background-color: #a93226;
+}
+
+img {
+  margin-top: 8px;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  button {
+    width: 72px;
+    font-size: 12px;
+  }
+  .number {
+    font-size: 12px;
+  }
+}

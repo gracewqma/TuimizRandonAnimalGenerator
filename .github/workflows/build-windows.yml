@@ -1,0 +1,51 @@
+name: Build Windows .exe
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "desktop-client/**"
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "desktop-client/**"
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    defaults:
+      run:
+        working-directory: desktop-client
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-pc-windows-msvc
+
+      - name: Install Tauri CLI
+        shell: bash
+        run: cargo install tauri-cli --version "^2"
+
+      - name: Build .exe
+        shell: bash
+        run: cargo tauri build --bundles msi
+
+      - name: Upload installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: tuimiz-animal-generator-windows
+          path: desktop-client/src-tauri/target/release/bundle/msi/*.msi
+          if-no-files-found: warn
+
+      - name: Upload standalone .exe
+        uses: actions/upload-artifact@v4
+        with:
+          name: tuimiz-animal-generator-exe
+          path: desktop-client/src-tauri/target/release/*.exe
+          if-no-files-found: warn
