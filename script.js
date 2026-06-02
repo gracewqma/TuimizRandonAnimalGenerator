@@ -189,8 +189,7 @@
     "snow leopard", "hyena", "toucan", "weasel", "wildebeest", "wolverine", "abyssinian", "affenpinscher",
     "ainu dog", "airedale terrier", "giant tortoise", "river dolphin", "american bulldog", "clawed frog",
     "angelfish", "ant", "anteater", "arctic hare", "giant hornet",
-    "barn owl", "barracuda", "basenji", "basking shark", "bearded dragon", "beaver", "blue jay", "blue whale", "bluetick
-  coonhound",
+    "barn owl", "barracuda", "basenji", "basking shark", "bearded dragon", "beaver", "blue jay", "blue whale", "bluetick coonhound",
     "bobcat", "bombay", "booby",
     "bumblebee", "bullfrog", "bull shark", "bull terrier", "great white shark", "cairn terrier", "cassowary",
     "t-rex", "stegosaurus", "catfish", "camel", "chamois", "caterpillar", "chicken", "chinchilla", "chipmunk",
@@ -224,8 +223,7 @@
     "malay lacewing", "rainbow stag beetle", "rosy maple moth", "tailed jay", "pygmy rabbit", "pygmy marmoset", "etruscan shrew",
     "japanese serow", "azara's agouti", "black lemur", "prairie dog",
     "dwarf mongoose", "reindeer", "european mink", "harvest mouse", "kulan", "patagonian mara", "przewalski's wild horse",
-    "pygmy marmoset", "wallaby", "takin", "vicuna", "white-face saki", "star-nosed mole", "snub-nosed monkey", "proboscis
-  monkey", "tapir"
+    "pygmy marmoset", "wallaby", "takin", "vicuna", "white-face saki", "star-nosed mole", "snub-nosed monkey", "proboscis monkey", "tapir"
   ];
   
   const legs = [
@@ -384,10 +382,8 @@
     "cleaner shrimp", "rain frog", "european pine marten", "european badger", "eurasian otter", "wolverine", "stoat",
     "honey badger", "leaf sheep", "ocean angel", "palmato gecko", "muntjac deer", "cocker spaniel", "pit bull terrier",
     "java mouse-deer", "blue ridge two-lined salamander", "aardwolf", "numbat", "jack russel terrier", "chihuahua",
-    "spider monkey", "scorpion", "long-tailed widowbird", "indian giant squirrel", "turquoise-browed motmot", "greater
-  racket-tailed drongo",
-    "long-eared jerboa", "wilson's bird-of-paradise", "lady amherst's pheasant", "superb lyrebird", "raccoon", "bushy-tailed
-  mongoose",
+    "spider monkey", "scorpion", "long-tailed widowbird", "indian giant squirrel", "turquoise-browed motmot", "greater racket-tailed drongo",
+    "long-eared jerboa", "wilson's bird-of-paradise", "lady amherst's pheasant", "superb lyrebird", "raccoon", "bushy-tailed mongoose",
     "striped skunk", "binturong", "short-tailed shrew", "saluki", "alaskan malamute",
     "japanese serow", "azara's agouti", "black lemur", "prairie dog",
     "dwarf mongoose", "reindeer", "european mink", "harvest mouse", "kulan", "patagonian mara", "przewalski's wild horse",
@@ -502,8 +498,7 @@
     "mandrill", "wattle-cup caterpillar", "greater earless lizard", "blue-ringed octopus", "mandarin fish", "peacock spider",
     "lesser redpoll", "bullfinch", "golden oriole", "siskin", "green woodpecker", "capercaillie", "ring-necked parakeet",
   "eurasian jay",
-    "blue tit", "kingfisher", "european bee-eater", "boeseman's rainbowfish", "cameroon dwarf gecko", "forest caterpillar
-  hunter",
+    "blue tit", "kingfisher", "european bee-eater", "boeseman's rainbowfish", "cameroon dwarf gecko", "forest caterpillar hunter",
     "iridescent tiger beetle", "madagascan sunset moth", "orange-breasted sunbird", "painted bunting", "panther chameleon",
     "parrotfish", "red-capped parrot", "sally lightfoot crab", "scarlet-chested parrot", "sun conure", "cortez rainbow wrasse",
     "ornare wrasse", "zigzag wrasse", "yellow-banded poison dart frog", "resplendent quetzal", "oriental dwarf kingfisher",
@@ -512,25 +507,16 @@
     "eastern collared lizard", "scarlet tanager", "blood-red glider", "scarlet peacock butterfly", "red milk snake",
     "yellow cobra guppy", "fire skink", "common green forest lizard", "monarch butterfly", "clown nudibranch", "koi fish",
     "european firebug", "ailanthus webworm moth", "venezuelan troupial", "sira poison dart frog", "yellowtail coris",
-    "western spindalis", "yellow boxfish", "climbing mantella", "yellow longnose butterflyfish", "banana nudibranch", "gold lace
-  nudibranch",
-    "great tit", "lemonpeel angelfish", "golden conure", "bluestripe snapper", "yellow-breasted chat", "green keel-bellied
-  lizard",
+    "western spindalis", "yellow boxfish", "climbing mantella", "yellow longnose butterflyfish", "banana nudibranch", "gold lace nudibranch",
+    "great tit", "lemonpeel angelfish", "golden conure", "bluestripe snapper", "yellow-breasted chat", "green keel-bellied lizard",
     "green-headed tanager", "golden-tailed sapphire", "golden-fronted leafbird", "emerald tree monitor", "glorious scarab",
-    "common dolphinfish", "green terror cichlid", "leaf slug", "european green toad", "dogbane beetle", "inca jay", "blue tree
-  monitor",
-    "blue dacnis", "florida scrub-jay", "portuguese man o' war", "rainbow whiptail", "hyacinth macaw", "blue tang", "shining
-  honeycreeper",
-    "periander metalmark", "yellowstriped fairy basslet", "purple emperor", "purple grenadier", "purple gallinule", "royal
-  gramma",
-    "spanish shawl", "two spined anglefish", "purple firefish", "purple-crested turaco", "pink-headed warbler", "roseate
-  spoonbill",
-    "major mitchell's cockatoo", "bourke's parakeet", "common buckeye butterfly", "little bunting", "pied tamarin", "brown
-  trout",
-    "brown-winged kingfisher", "brown booby", "european fire-bellied toad", "brandt's cormorant", "african grey parrot", "lagoon
-  triggerfish",
-    "grey four-eyed opossum", "grey plover", "snow owl", "salt marsh moth", "dalmatian", "bernese mountain dog", "german
-  shepherd",
+    "common dolphinfish", "green terror cichlid", "leaf slug", "european green toad", "dogbane beetle", "inca jay", "blue tree monitor",
+    "blue dacnis", "florida scrub-jay", "portuguese man o' war", "rainbow whiptail", "hyacinth macaw", "blue tang", "shining honeycreeper",
+    "periander metalmark", "yellowstriped fairy basslet", "purple emperor", "purple grenadier", "purple gallinule", "royal gramma",
+    "spanish shawl", "two spined anglefish", "purple firefish", "purple-crested turaco", "pink-headed warbler", "roseate spoonbill",
+    "major mitchell's cockatoo", "bourke's parakeet", "common buckeye butterfly", "little bunting", "pied tamarin", "brown trout",
+    "brown-winged kingfisher", "brown booby", "european fire-bellied toad", "brandt's cormorant", "african grey parrot", "lagoon triggerfish",
+    "grey four-eyed opossum", "grey plover", "snow owl", "salt marsh moth", "dalmatian", "bernese mountain dog", "german shepherd",
     "beagle", "siberian husky", "catahoula", "zebra", "striped chipmunk", "spotted genet", "fallow deer", "axis deer",
     "azara's agouti", "black lemur", "prairie dog",
     "dwarf mongoose", "reindeer", "european mink", "harvest mouse", "kulan", "patagonian mara", "przewalski's wild horse",
