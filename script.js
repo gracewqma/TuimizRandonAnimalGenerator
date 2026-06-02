@@ -1,181 +1,606 @@
-
-    const animals = ["mouse",
-            "duck", "horse", "moose", "sheep", "crocodile", "bat",
-            "seal", "monkey", "meerkat", "bear", "elephant","gazelle",
-            "lion", "tiger", "wolf", "camel", "otter", "chameleon",
-            "large white pig", "wild boar", "Nubian goat", "Nigerian goat", "Irish cob",
-            "Arabian horse", "okapi", "maned wolf", "fosse", "slow lori", "angora rabbit",
-            "axolotl", "bearded vulture", "red panda", "cheetah", "glass frog", "mantis shrimp",
-            "sun bear", "aye-aye", "markhor", "saiga antelope", "sloth",
-            "pangolin", "gharial", "white tiger", "porcupine", "african crowned crane",
-            "african wild dog", "leopard", "bat-eared fox", "bongo", "orangutan", "sea lion", "caracal",
-            "giraffe", "rhino", "howler monkey", "mountain lion", "koala", "an arctic fox", "panther",
-            "millipede", "aardvark", "Afghan hound", "African civet", "African penguin",
-            "armadillo", "baboon", "bison", "brown bear",
-            "budgerigar", "capybara", "cassowary", "clownfish", "coati", "common frog",
-            "cottontop tamarin", "coyote", "dachshund", "emu", "european hare", "fennec fox", "hammerhead shark",
-            "gemsbok", "golden pheasant", "common pheasant", "grasshopper", "pelican", "honey bee", "hoopoe bird", "jackal",
-            "king penguin", "komodo dragon", "ladybug", "ring-tailed lemur", "japanese macaque",
-            "mountain goat", "tarantula", "opossum", "pine marten", "pirahna", "polar bear", "red squirrel",
-            "red fox", "kangaroo", "roborovski hamster", "ibis", "seahorse", "secretary bird", "serval",
-            "snow leopard", "hyena", "toucan", "weasel", "wildebeest", "affenpinscher",
-            "ainu dog", "airedale terrier", "giant tortoise", "river dolphin", "american bulldog", "clawed frog",
-            "angelfish", "ant", "appenzeller dog", "anteater", "arctic hare", "giant hornet", "cattle dog", "australian shepherd",
-            "barracuda", "basenji", "basking shark", "basset hound", "bearded dragon", "beaver", "bedlington terrier",
-            "bichon frise", "birman", "black russian terrier", "bloodhound", "blue whale", "bluetick coonhound",
-            "bombay", "booby", "border collie", "border terrier", "boston terrier",
-            "bumblebee", "bullfrog", "bull shark", "bull terrier", "great white shark", "cairn terrier",
-            "t-rex", "stegosaurus", "catfish", "dromedary camel", "chamois", "chicken", "chinchilla", "chipmunk",
-            "collared peccary", "colossal squid", "cichlid", "cuscus", "darwin's frog", "dhole", "discus",
-            "dodo", "dogue de bordeaux", "donkey", "dragonfly", "dormouse", "earwig", "echidna", "emperor tamarin",
-            "fishing cat", "flamingo", "fangtooth", "ferret", "gecko", "gila monster", "gopher",
-            "grouse", "harpy eagle", "hippopotamus", "heron", "honey badger", "narwhal", "green anole",
-            "golden retriever", "lamprey", "kiwi", "mudskipper", "potoo", "mandarin fish", "lovebird",
-            "wigeon", "saola", "cuban snail", "bald ibis", "ploughshare tortoise",
-            "angel shark", "golden-rumped elephant shrew", "peacock tarantula", "dama gazelle",
-            "blue poison dart frog", "golden poison frog", "chinese crested",
-            "mimic poison frog", "amazon milk frog", "dyeing dart frog", "phantasmal poison frog", "lilac-breasted roller",
-            "swallowtail butterfly", "california red-sided garter snake", "gouldian finch",
-            "san francisco garter snake", "emerald tree boa", "jewel bug", "betta fish","amur leopard",
-            "vaquita","javan rhino","baiji dolphin","hirola", "fiery-throated hummingbird", "carnotaurus",
-            "madagascar pochard", "nile lechwe","zebu","yak", "scarlet macaw","mandarin duck","piebald peacock",
-            "rainbow lorikeet", "harlequin tuskfish", "electric blue gecko", "orca",
-            "blue morpho butterfly", "red-eyed tree frog", "rainbow trout",
-            "leaf insect", "yellow tang", "rainbow bee-eater","blue-ringed octopus", "british timber",
-            "pink fairy armadillo", "blue jay", "eurasian jay", "mandarin rat snake",
-            "blue gourami", "rainbow wrasse", "scarlet tanager", "green iguana", "mandarin vole",
-            "blue-tailed skink", "scarlet ibis", "glossy ibis", "mandarin catfish","ringtail possum",
-            "rice weevil", "centipede","cockroach", "mosquito", "philippine eagle",
-            "cleaner shrimp", "rain frog", "european badger", "eurasian otter", "wolverine", "stoat",
-            "leaf sheep", "ocean angel", "palmato gecko", "muntjac deer", " bare-throated bellbird",
-            "king bird-of-paradise", "wilson's bird-of-paradise", "cocker spaniel", "pit bull terrier",
-            "java mouse-deer", "blue ridge two-lined salamander", "aardwolf", "numbat", "jack russel terrier", "chihuahua",
-            "whippet", "shih tzu", "puli", "german shepherd", "eastern bluebird", "peregrine falcon",
-            "pug", "great dane", "schnauzer", "jellyfish", "horseshoe crab", "hedgehog",
-            "tyrannosaurus", "triceratops", "parasaurolophus", "harpy", "chimera",
-            "allosaurus", "brachiosaurus", "ankylosaurus", "utahraptor", "pterodactylus","spinosaurus", "griffin",
-            "leafy sea dragon", "musk deer", "blue glaucus", "goldfinch", "spiny softshell turtle",
-            "goldcrest", "common yellowthroat","welcome swallow", "white-throated swift",
-            "black vulture", "violet-green swallow", "house finch","yellow-bellied sapsucker", "common moorhen",
-            "chimney swift", "silvereye", "Eurasian golden oriole", "pink-eared duck",
-            "black-chinned hummingbird", "lazuli bunting", "anna's hummingbird", "green heron",
-            "yellow-breasted chat", "chestnut-collared longspur", "yellow-billed cuckoo", "tui", "superb lyrebird",
-            "American white pelican","golden tortoise beetle", "Indian painted grasshopper",
-            "cairns birdwing", "thorn treehopper", "spiny flower mantis", "European peacock butterfly", "lantern bug",
-            "malay lacewing", "rainbow stag beetle", "rosy maple moth", "tailed jay", "pygmy rabbit", "pygmy marmoset", "Etruscan shrew",
-            "pekingese", "komondor", "pharaoh hound", "finnish spitz", "saluki", "skye terrier", "beauceron", "azawakh",
-            "lundehund", "tibetan mastiff", "chow chow", "mudi", "catahoula", "dandiedinmont terrier", "australian terrier" ,
-            "swedish vallhund", "otterhound", "thai ridgeback", "stabyhoun", "karelian bear dog", "briard", "alaskan klee kai",
-            "american english coonhound", "english bulldog", "akita", "american akita", "hokkaido", "kai ken", "borzoi",
-            "boxer", "bracco italiano", "ca de bou", "cesky terrier", "chesapeake bay retriever", "chongqing", "clumber spaniel",
-            "dalmatian", "doberman", "drever", "english setter", "entlebucher mountain dog", "finnish hound", "french bulldog",
-            "galgo español", "german pincher", "havanese", "hovawart", "ibizan hound", "irish water spaniel", "jagdterrier",
-            "japanese chin", "keeshond", "kishu", "kokoni", "kuvasz", "landseer", "löwchen", "poodle", "markiesje", "kooikerhondje",
-            "miniature schnauzer", "giant schnauzer", "buhund", "nova scotia duck tolling retriever", "papillon", "welsh corgi pembroke",
-            "welsh corgi cardigan", "petit basset griffon vendeen", "grand basset griffon vendeen", "pomeranian", "portuguese water dog",
-            "pumi", "pyrenean mastiff", "rottweiler", "rough collie", "russkiy toy", "saarloos wolfdog", "smooth collie", "tornjak",
-            "tosa inu", "toy fox terrier", "weimaraner", "yorkshire terrier", "yakutian laika", "manakin bird", "bowerbird", "emerald toucanet",
-            "tufted puffin", "magellanic woodpecker", "red-knobbed hornbill", "hoatzin bird", "kakapo", "vulturine guinea fowl",
-            "resplendent quetzal bird","great white pelican", "pampas cat", "oncilla", "kodkod", "marbled cat",
-            "indian paradise flycatcher", "bleeding heart pigeon", "lady amherst's pheasant", "ocellated turkey", "great crested grebe",
-            "helmeted hornbill", "marabou stork", "scarlet 'i'iwi", "ribbon-tailed astrapia bird", "jacana bird", "king vulture", "canada goose",
-            "mute swan", "mallard", "smew bird", "ring-necked pheasant", "hazel grouse", "willow ptarmigan",
-            "rock ptarmigan", "western capercaillie", "spotted salamander","eastern long-tailed salamander",
-            "black grouse", "common quail", "common wood-pigeon", "common cuckoo", "eurasian coot", "common crane",
-            "dunlin bird", "great skua bird", "atlantic puffin", "black-headed gull", "common gull", "great black-backed gull", "arctic loon",
-            "buzzard", "barn owl", "ocelot", "cougar", "asian golden cat", "clouded leopard", "andean mountain cat", "margay",
-            "bay cat", "bobcat", "canada lynx", "eurasian lynx", "iberian lynx", "jaguarundi", "palla's cat", "rusty spotted cat", "flat-headed cat",
-            "jungle cat", "black-footed cat", "sand cat", "ragdoll", "norwegian forest cat", "abyssinian", "egyptian mau", "savannah", "siamese cat",
-            "bengal cat", "singapura", "lykoi", "japanese bobtail", "laperm cat", "peterbald", "devon tex", "sphynx", "selkirk rex", "highlander cat",
-            "scottish fold", "american curl","exotic shorthair", "manx", "ocicat", "chinchilla cat", "khao manee cat", "ukrainian levkoy cat",
-            "balinese", "siberian cat", "munchkin", "maine coon", "russian blue", "turkish van", "sokoke cat", "green basilisk", "flying dragon",
-            "armadillo girdled lizard", "thorny devil", "leaf-tailed gecko", "matamata turtle", "panther chameleon", "brazilian rainbow boa",
-            "ornate uromastyx lizard", "caiman lizard", "ornate day gecko", "eastern collared lizard", "fiji banded iguana", "tokay gecko",
-            "red headed agama", "electric blue day gecko", "cave dwelling rat snake", "broadley's flat lizard", "pied avocet", "northern lapwing",
-            "union island gecko", "indo-chinese forest lizard", "asian giant softshell turtle", "blue-tongued skink", "chinese crocodile lizard",
-            "flying gecko", "frilled lizard", "malagasy leaf-nosed snake", "marine iguana", "spiny bush viper", "tentacled snake",
-            "draco lizard", "borneo earless monitor", "indian star tortoise", "black pond turtle", "leith's softshell turtle", "branderhorst's turtle",
-            "parker's snake-necked turtle", "box turtle", "loggerhead sea turtle", "olive ridley sea turtle", "alligator snapping turtle",
-            "american crocodile", "dwarf crocodile", "galapagos land iguana", "yucatan spiny-tailed iguana", "northern bahamian rock iguana",
-            "emperor flat lizard", "iaraka river leaf chameleon", "antimena chameleon", "jewelled chameleon", "labord's chameleon", "petter's chameleon",
-            "bertucci's pygmy chameleon", "red stripe gargoyle gecko", "red-footed tortoise", "leopard gecko",
-            "red-spotted salamander", "hissing cockroach", "conehead mantis", "spotted lanternfly", "peacock spider",
-            "two-striped jumping spider", "green jumping spider", "bog sun-jumper spider", "glow-worm", "green lacewing", "new forest cicada",
-            "red fire and", "ruby-tailed wasp", "scarce emerald damselfly", "spiky yellow woodlouse", "tansy beetle", "beddau beast",
-            "sabre wasp", "vicky's ground spider", "violet ground beetle", "violet oil beetle", "wasp spider", "zircon reed beetle",
-            "orchid mantis", "goliath stick insect", "glasswing butterfly", "trap-jaw ant", "hummingbird hawk-moth", "whip spider",
-            "leafcutter ant", "spiny flower mantis", "atlas moth caterpillar", "comet moth", "feather-horned beetle", "wasp mantis fly",
-            "puss moth caterpillar", "jeweled  flower mantis", "gooty sapphire tarantula", "lichen katydid", "peppermint stick insect",
-            "helicopter damselfly", "glassy winged sharpshooter", "hickory horned devil", "spiny orb-weaver", "white ghost cicada",
-            "stinging rose caterpillar", "stinging rose moth", "blue milkweed beetle", "panda ant", "spiny devil katydid", "white with moth",
-            "frosted flatid planthopper", "white plumed moth", "emerald cockroach wasp", "antlion", "blue weevil beetle", "malaysian dead leaf mantis",
-            "blue death-feigning beetle", "indian leaf butterfly", "saddleback caterpillar", "spiny oak slug caterpillar", "io moth",
-            "blue morpho caterpillar", "pink underwing moth caterpillar", "red-humped caterpillar", "cinnabar moth caterpillar",
-            "glass jewel caterpillar", "sycamore moth caterpillar", "brahmin moth caterpillar", "mirror spider", "green lynx spider",
-            "brazilian jewel tarantula", "mexican red-knee tarantula", "housefly", "aphid", "small tortoiseshell butterfly", "common brimstone butterfly",
-            "mourning cloak butterfly", "minstrel bug", "roesel's bush-cricker", "hoverfly"];
-
-    const extras = [
-      "unicorn horn", "nose horn", "reindeer antlers", "long eyelashes", 
-      "huge ears", "cactus spikes", "huge eyes","piebaldism", "antennae", "moose antlers", 
-      "bee stinger", "glowing eyes", "iridescence", "long whiskers", "fangs", "extra eyes",
-      "sheep horns", "albinism", "melanism", "antlers", "spines along the back", "bioluminescent", 
-      "winter coat/summer coat", "erythrism","heterochromia", "leucism", "xanthochromish", 
-      "juvenile", "hairless", "embedded gems", "plants", "mushrooms","none", "none", "none", "none"
-    ];
-
-    // 🕷️ Trigger words for warning
-    const arachnidTriggers = [
-      "spider", "tarantula", "whip spider", "arachnid",
-      "scorpion", "centipede", "millipede", "tick", "mite"
-    ];
-
-    function showArachnophobiaWarning(animal) {
-        alert("WARNING: Arachnophobia generated");
-      console.warn("⚠️ Arachnophobia Warning Triggered for:", animal);
-    }
-
-    function closeWarning() {
-      document.getElementById("warningOverlay").style.display = "none";
-    }
-
-    function checkForArachnids(animal) {
-      return arachnidTriggers.some(trigger => animal.toLowerCase().includes(trigger));
-    }
-
-    function generateAnimalWithAnimation(index) {
-      const button = document.querySelector(`button[onclick='generateAnimalWithAnimation(${index})']`);
-      const element = document.getElementById(`num${index}`);
-      button.disabled = true;
-      let count = 0;
-      const interval = setInterval(() => {
-        const randomAnimal = animals[Math.floor(Math.random() * animals.length)];
-        element.textContent = randomAnimal;
-        count++;
-        if (count > 20) {
-          clearInterval(interval);
-          const finalAnimal = animals[Math.floor(Math.random() * animals.length)];
-          element.textContent = finalAnimal;
-          button.disabled = false;
-          if (checkForArachnids(finalAnimal)) showArachnophobiaWarning(finalAnimal);
-        }
-      }, 20);
-    }
-
-    function generateExtraWithAnimation(index) {
-      const button = document.querySelector(`button[onclick='generateExtraWithAnimation(${index})']`);
-      const element = document.getElementById(`num${index}`);
-      button.disabled = true;
-      let count = 0;
-      const interval = setInterval(() => {
-        const randomExtra = extras[Math.floor(Math.random() * extras.length)];
-        element.textContent = randomExtra;
-        count++;
-        if (count > 20) {
-          clearInterval(interval);
-          const finalExtra = extras[Math.floor(Math.random() * extras.length)];
-          element.textContent = finalExtra;
-          button.disabled = false;
-        }
-      }, 20);
-    }
+  const head = [
+    "harvest mouse", "duck", "horse", "moose", "sheep", "crocodile", "bat",
+    "seal", "monkey", "meerkat", "brown bear", "sloth bear", "elephant", "gazelle",
+    "lion", "tiger", "wolf", "camel", "otter", "chameleon", "flamingo",
+    "large white pig", "wild boar", "nubian goat", "nigerian goat", "irish cob",
+    "arabian horse", "okapi", "maned wolf", "fosse", "slow lori", "angora rabbit",
+    "axolotl", "bearded vulture", "red panda", "cheetah", "glass frog", "mantis shrimp",
+    "sun bear", "aye-aye", "markhor", "saiga antelope", "sloth", "sea turtle",
+    "pangolin", "gharial", "marine iguana", "white tiger", "porcupine", "african crowned crane",
+    "african wild dog", "leopard", "bat-eared fox", "bongo", "orangutan", "sea lion", "caracal",
+    "giraffe", "rhino", "howler monkey", "mountain lion", "koala", "arctic fox", "panther",
+    "millipede", "aardvark", "afghan hound", "african civet", "african penguin", "akita", "anteater",
+    "arctic hare", "armadillo", "baboon", "barn owl", "bedlington terrier", "bison", "bobcat", "brown bear",
+    "budgerigar", "capybara", "cassowary", "clownfish", "coati", "common frog",
+    "cottontop tamarin", "coyote", "dachshund", "emu", "european hare", "fennec fox", "hammerhead shark",
+    "gemsbok", "golden pheasant", "common pheasant", "grasshopper", "pelican", "honey bee", "hoopoe bird", "jackal",
+    "king penguin", "komodo dragon", "ladybug", "ring-tailed lemur", "llama", "lynx", "japanese macaque",
+    "mountain goat", "tarantula", "opossum", "pine marten", "pirahna", "polar bear", "red squirrel",
+    "red fox", "kangaroo", "roborovski hamster", "ibis", "scarlet macaw", "seahorse", "secretary bird", "serval",
+    "snow leopard", "hyena", "toucan", "weasel", "wildebeest", "wolverine", "abyssinian", "affenpinscher",
+    "ainu dog", "airedale terrier", "giant tortoise", "river dolphin", "american bulldog", "clawed frog",
+    "angelfish", "ant", "appenzeller dog", "anteater", "arctic hare", "giant hornet", "cattle dog", "australian shepherd",
+    "barn owl", "barracuda", "basenji", "basking shark", "basset hound", "bearded dragon", "beaver", "bedlington terrier",
+    "bichon frise", "birman", "black russian terrier", "bloodhound", "blue jay", "blue whale", "bluetick coonhound",
+    "bobcat", "bombay", "booby", "border collie", "border terrier", "boston terrier", "boxer",
+    "bumblebee", "bullfrog", "bull shark", "bull terrier", "great white shark", "cairn terrier", "cassowary",
+    "t-rex", "stegosaurus", "catfish", "camel", "chamois", "caterpillar", "chicken", "chinchilla", "chipmunk",
+    "collared peccary", "colossal squid", "cichlid", "clownfish", "cuscus", "darwin's frog", "dhole", "discus",
+    "dodo", "dogue de bordeaux", "donkey", "dragonfly", "dormouse", "earwig", "echidna", "emperor tamarin",
+    "fishing cat", "flamingo", "fangtooth", "ferret", "gecko", "gila monster", "german shepherd", "gopher",
+    "grouse", "harpy eagle", "hippopotamus", "heron", "honey badger", "narwhal", "green anole",
+    "golden retriever", "lamprey", "kiwi", "mudskipper", "potoo", "mandarin fish", "lovebird",
+    "wigeon", "saola", "cuban snail", "bald ibis", "ploughshare tortoise", "resplendent quetza",
+    "angel shark", "golden-rumped elephant shrew", "peacock tarantula", "bumblebee", "dama gazelle",
+    "blue poison dart frog", "red-eyed tree frog", "golden poison frog", "chinese crested",
+    "mimic poison frog", "amazon milk frog", "dyeing dart frog", "phantasmal poison frog", "lilac-breasted roller",
+    "swallowtail butterfly", "california red-sided garter snake", "gouldian finch", "rosy maple moth", "mandarin duck",
+    "san francisco garter snake", "rainbow boa", "emerald tree boa", "jewel bug", "betta fish", "amur leopard",
+    "vaquita", "javan rhino", "baiji dolphin", "hirola", "fiery-throated hummingbird", "carnotaurus",
+    "madagascar pochard", "nile lechwe", "iberian lynx", "zebu", "yak", "scarlet macaw", "mandarin duck", "piebald peacock",
+    "rainbow lorikeet", "harlequin tuskfish", "electric blue gecko", "red panda", "killer whale",
+    "blue morpho butterfly", "red-eyed tree frog", "rainbow trout", "green anole", "doberman",
+    "leaf insect", "yellow tang", "rainbow bee-eater", "blue-ringed octopus", "budgerigar", "british timber",
+    "pink fairy armadillo", "golden pheasant", "blue jay", "eurasian jay", "mandarin rat snake",
+    "blue gourami", "rainbow wrasse", "scarlet tanager", "green iguana", "mandarin vole",
+    "blue-tailed skink", "scarlet ibis", "glossy ibis", "mandarin catfish", "ringtail possum",
+    "rice weevil", "centipede", "cockroach", "mosquito", "philippine eagle", "gharial",
+    "cleaner shrimp", "rain frog", "european pine marten", "european badger", "eurasian otter", "wolverine", "stoat",
+    "honey badger", "leaf sheep", "ocean angel", "palmato gecko", "muntjac deer", "bare-throated bellbird",
+    "king bird-of-paradise", "wilson's bird-of-paradise", "cocker spaniel", "pit bull terrier",
+    "java mouse-deer", "blue ridge two-lined salamander", "aardwolf", "numbat", "jack russel terrier", "chihuahua",
+    "whippet", "shih tzu", "puli", "german shepherd", "eastern bluebird", "peregrine falcon",
+    "pug", "great dane", "schnauzer", "jellyfish", "horseshoe crab", "hedgehog",
+    "tyrannosaurus", "triceratops", "stegosaurus", "parasaurolophus", "harpy", "chimera",
+    "allosaurus", "brachiosaurus", "ankylosaurus", "utahraptor", "pterodactylus", "spinosaurus", "griffin",
+    "leafy sea dragon", "musk deer", "blue glaucus", "goldfinch", "spiny softshell turtle",
+    "budgerigar", "goldcrest", "common yellowthroat", "welcome swallow", "white-throated swift",
+    "black vulture", "violet-green swallow", "house finch", "yellow-bellied sapsucker", "common moorhen", "great crested grebe",
+    "chimney swift", "silvereye", "eurasian golden oriole", "pink-eared duck",
+    "black-chinned hummingbird", "lazuli bunting", "anna's hummingbird", "green heron", "eurasian jay",
+    "yellow-breasted chat", "chestnut-collared longspur", "yellow-billed cuckoo", "tui", "superb lyrebird",
+    "american white pelican", "golden tortoise beetle", "indian painted grasshopper",
+    "cairns birdwing", "thorn treehopper", "spiny flower mantis", "european peacock butterfly", "lantern bug",
+    "malay lacewing", "rainbow stag beetle", "rosy maple moth", "tailed jay", "pygmy rabbit", "pygmy marmoset", "etruscan shrew",
+    "japanese serow", "azara's agouti", "black lemur", "prairie dog",
+    "dwarf mongoose", "reindeer", "european mink", "harvest mouse", "kulan", "patagonian mara", "przewalski's wild horse",
+    "pygmy marmoset", "wallaby", "takin", "vicuna", "white-face saki"
+  ];
+  
+  const ears = [
+    "mouse", "horse", "moose", "sheep",
+    "seal", "monkey", "meerkat", "brown bear", "elephant", "gazelle",
+    "lion", "tiger", "wolf", "otter", "chameleon",
+    "large white pig", "wild boar", "nubian goat", "nigerian goat", "irish cob",
+    "arabian horse", "okapi", "maned wolf", "fosse", "slow lori", "angora rabbit",
+    "axolotl", "bearded vulture", "red panda", "cheetah", "glass frog", "mantis shrimp",
+    "sun bear", "aye-aye", "markhor", "saiga antelope", "sloth",
+    "pangolin", "gharial", "marine iguana", "porcupine",
+    "african wild dog", "leopard", "bat-eared fox", "bongo", "orangutan", "caracal",
+    "giraffe", "rhino", "howler monkey", "mountain lion", "koala", "arctic fox", "panther",
+    "millipede", "aardvark", "african civet", "african penguin", "anteater",
+    "armadillo", "baboon", "barn owl", "european bison", "bobcat", "brown bear",
+    "budgerigar", "capybara", "clownfish", "coati", "common frog",
+    "cottontop tamarin", "coyote", "european hare", "fennec fox", "gemsbok", "jackal",
+    "ring-tailed lemur", "llama", "european lynx", "japanese macaque",
+    "mountain goat", "opossum", "pine marten", "polar bear", "red squirrel",
+    "red fox", "roborovski hamster", "serval",
+    "snow leopard", "hyena", "weasel", "wildebeest", "wolverine", "anteater", "arctic hare", "beaver", "bobcat",
+    "camel", "chamois", "chinchilla", "chipmunk", "collared peccary", "cuscus", "dhole",
+    "donkey", "dormouse", "echidna", "emperor tamarin",
+    "fishing cat", "fangtooth", "ferret", "gopher", "hippopotamus", "honey badger",
+    "saola", "golden-rumped elephant shrew", "dama gazelle", "chinese crested", "amur leopard", "javan rhino", "hirola",
+    "madagascar pochard", "nile lechwe", "iberian lynx", "zebu", "yak",
+    "rainbow lorikeet", "red panda", "killer whale", "pink fairy armadillo", "ringtail possum",
+    "european pine marten", "european badger", "eurasian otter", "stoat",
+    "honey badger", "leaf sheep", "ocean angel", "muntjac deer",
+    "java mouse-deer", "aardwolf", "numbat", "japanese serow", "long-eared owl", "long-eared jerboa",
+    "american curl", "black-tailed jackrabbit", "kangaroo rat", "red kangaroo", "mule deer", "american brahman",
+    "galago", "german shepherd", "cocker spaniel", "collie", "whippet", "azara's agouti", "black lemur", "prairie dog",
+    "dwarf mongoose", "reindeer", "european mink", "harvest mouse", "kulan", "patagonian mara", "przewalski's wild horse",
+    "pygmy marmoset", "wallaby", "takin", "vicuna", "white-face saki"
+  ];
+  
+  const eyes = [
+    "mouse", "duck", "horse", "moose", "sheep", "crocodile", "bat",
+    "seal", "monkey", "meerkat", "bear", "elephant", "gazelle",
+    "lion", "tiger", "wolf", "camel", "otter", "chameleon", "flamingo",
+    "large white pig", "wild boar", "nubian goat", "nigerian goat", "irish cob",
+    "arabian horse", "okapi", "maned wolf", "fosse", "slow lori", "angora rabbit",
+    "axolotl", "bearded vulture", "red panda", "cheetah", "glass frog", "mantis shrimp",
+    "sun bear", "aye-aye", "markhor", "saiga antelope", "sloth", "sea turtle",
+    "pangolin", "gharial", "marine iguana", "white tiger", "porcupine", "african crowned crane",
+    "african wild dog", "leopard", "bat-eared fox", "bongo", "orangutan", "sea lion", "caracal",
+    "giraffe", "rhino", "howler monkey", "mountain lion", "koala", "arctic fox", "panther",
+    "millipede", "aardvark", "afghan hound", "african civet", "african penguin", "akita", "anteater",
+    "arctic hare", "armadillo", "baboon", "barn owl", "bedlington terrier", "bison", "bobcat", "brown bear",
+    "budgerigar", "capybara", "cassowary", "clownfish", "coati", "common frog",
+    "cottontop tamarin", "coyote", "dachshund", "emu", "european hare", "fennec fox", "hammerhead shark",
+    "gemsbok", "golden pheasant", "common pheasant", "grasshopper", "pelican", "honey bee", "hoopoe bird", "jackal",
+    "king penguin", "komodo dragon", "ladybug", "ring-tailed lemur", "llama", "lynx", "japanese macaque",
+    "mountain goat", "tarantula", "opossum", "pine marten", "pirahna", "polar bear", "red squirrel",
+    "red fox", "kangaroo", "roborovski hamster", "ibis", "scarlet macaw", "seahorse", "secretary bird", "serval",
+    "snow leopard", "hyena", "toucan", "weasel", "wildebeest", "wolverine", "abyssinian", "affenpinscher",
+    "ainu dog", "airedale terrier", "giant tortoise", "river dolphin", "american bulldog", "clawed frog",
+    "angelfish", "ant", "appenzeller dog", "anteater", "arctic hare", "giant hornet", "cattle dog", "australian shepherd",
+    "barn owl", "barracuda", "basenji", "basking shark", "basset hound", "bearded dragon", "beaver", "bedlington terrier",
+    "bichon frise", "birman", "black russian terrier", "bloodhound", "blue jay", "blue whale", "bluetick coonhound",
+    "bobcat", "bombay", "booby", "border collie", "border terrier", "boston terrier", "boxer",
+    "bumblebee", "bullfrog", "bull shark", "bull terrier", "great white shark", "cairn terrier", "cassowary",
+    "t-rex", "stegosaurus", "catfish", "camel", "chamois", "caterpillar", "chicken", "chinchilla", "chipmunk",
+    "collared peccary", "colossal squid", "cichlid", "clownfish", "cuscus", "darwin's frog", "dhole", "discus",
+    "dodo", "dogue de bordeaux", "donkey", "dragonfly", "dormouse", "earwig", "echidna", "emperor tamarin",
+    "fishing cat", "flamingo", "fangtooth", "ferret", "gecko", "gila monster", "german shepherd", "gopher",
+    "grouse", "harpy eagle", "hippopotamus", "heron", "honey badger", "narwhal", "green anole",
+    "golden retriever", "lamprey", "kiwi", "mudskipper", "potoo", "mandarin fish", "lovebird",
+    "wigeon", "saola", "cuban snail", "bald ibis", "ploughshare tortoise", "resplendent quetza",
+    "angel shark", "golden-rumped elephant shrew", "peacock tarantula", "bumblebee", "dama gazelle",
+    "blue poison dart frog", "red-eyed tree frog", "golden poison frog", "chinese crested",
+    "mimic poison frog", "amazon milk frog", "dyeing dart frog", "phantasmal poison frog", "lilac-breasted roller",
+    "swallowtail butterfly", "california red-sided garter snake", "gouldian finch", "rosy maple moth", "mandarin duck",
+    "san francisco garter snake", "rainbow boa", "emerald tree boa", "jewel bug", "betta fish", "amur leopard",
+    "vaquita", "javan rhino", "baiji dolphin", "hirola", "fiery-throated hummingbird", "carnotaurus",
+    "madagascar pochard", "nile lechwe", "iberian lynx", "zebu", "yak", "scarlet macaw", "mandarin duck", "piebald peacock",
+    "rainbow lorikeet", "harlequin tuskfish", "electric blue gecko", "red panda", "killer whale",
+    "blue morpho butterfly", "red-eyed tree frog", "rainbow trout", "green anole", "doberman",
+    "leaf insect", "yellow tang", "rainbow bee-eater", "blue-ringed octopus", "budgerigar", "british timber",
+    "pink fairy armadillo", "golden pheasant", "blue jay", "eurasian jay", "mandarin rat snake",
+    "blue gourami", "rainbow wrasse", "scarlet tanager", "green iguana", "mandarin vole",
+    "blue-tailed skink", "scarlet ibis", "glossy ibis", "mandarin catfish", "ringtail possum",
+    "rice weevil", "centipede", "cockroach", "mosquito", "philippine eagle", "gharial",
+    "cleaner shrimp", "rain frog", "european pine marten", "european badger", "eurasian otter", "wolverine", "stoat",
+    "honey badger", "leaf sheep", "ocean angel", "palmato gecko", "muntjac deer", "bare-throated bellbird",
+    "king bird-of-paradise", "wilson's bird-of-paradise", "cocker spaniel", "pit bull terrier",
+    "java mouse-deer", "blue ridge two-lined salamander", "aardwolf", "numbat", "jack russel terrier", "chihuahua",
+    "whippet", "shih tzu", "puli", "german shepherd", "eastern bluebird", "peregrine falcon",
+    "pug", "great dane", "schnauzer", "jellyfish", "horseshoe crab", "hedgehog",
+    "tyrannosaurus", "triceratops", "stegosaurus", "parasaurolophus", "harpy", "chimera",
+    "allosaurus", "brachiosaurus", "ankylosaurus", "utahraptor", "pterodactylus", "spinosaurus", "griffin",
+    "leafy sea dragon", "musk deer", "blue glaucus", "goldfinch", "spiny softshell turtle",
+    "budgerigar", "goldcrest", "common yellowthroat", "welcome swallow", "white-throated swift",
+    "black vulture", "violet-green swallow", "house finch", "yellow-bellied sapsucker", "common moorhen", "great crested grebe",
+    "chimney swift", "silvereye", "eurasian golden oriole", "pink-eared duck",
+    "black-chinned hummingbird", "lazuli bunting", "anna's hummingbird", "green heron", "eurasian jay",
+    "yellow-breasted chat", "chestnut-collared longspur", "yellow-billed cuckoo", "tui", "superb lyrebird",
+    "american white pelican", "golden tortoise beetle", "indian painted grasshopper",
+    "cairns birdwing", "thorn treehopper", "spiny flower mantis", "european peacock butterfly", "lantern bug",
+    "malay lacewing", "rainbow stag beetle", "rosy maple moth", "tailed jay", "pygmy rabbit", "pygmy marmoset", "etruscan shrew",
+    "japanese serow"
+  ];
+  
+  const nose = [
+    "seal", "meerkat", "bear", "elephant", "gazelle",
+    "lion", "tiger", "wolf", "camel", "otter", "chameleon",
+    "large white pig", "wild boar", "nubian goat", "nigerian goat", "irish cob",
+    "arabian horse", "okapi", "maned wolf", "fossa", "slow lori", "angora rabbit",
+    "axolotl", "bearded vulture", "red panda", "cheetah", "glass frog", "mantis shrimp",
+    "sun bear", "aye-aye", "markhor", "saiga antelope", "sloth", "sea turtle",
+    "pangolin", "gharial", "marine iguana", "white tiger", "porcupine", "african crowned crane",
+    "african wild dog", "leopard", "bat-eared fox", "bongo", "orangutan", "sea lion", "caracal",
+    "giraffe", "rhino", "howler monkey", "mountain lion", "koala", "arctic fox", "panther",
+    "millipede", "aardvark", "afghan hound", "african civet", "african penguin", "akita", "anteater",
+    "arctic hare", "armadillo", "baboon", "barn owl", "bedlington terrier", "bison", "bobcat", "brown bear",
+    "budgerigar", "capybara", "cassowary", "clownfish", "coati", "common frog",
+    "cottontop tamarin", "coyote", "dachshund", "emu", "european hare", "fennec fox", "hammerhead shark",
+    "gemsbok", "golden pheasant", "common pheasant", "grasshopper", "pelican", "honey bee", "hoopoe bird", "jackal",
+    "king penguin", "komodo dragon", "ladybug", "ring-tailed lemur", "llama", "lynx", "japanese macaque",
+    "mountain goat", "tarantula", "opossum", "pine marten", "pirahna", "polar bear", "red squirrel",
+    "red fox", "kangaroo", "roborovski hamster", "ibis", "scarlet macaw", "seahorse", "secretary bird", "serval",
+    "snow leopard", "hyena", "toucan", "weasel", "wildebeest", "wolverine", "abyssinian", "affenpinscher",
+    "ainu dog", "airedale terrier", "giant tortoise", "river dolphin", "american bulldog", "clawed frog",
+    "angelfish", "ant", "anteater", "arctic hare", "giant hornet",
+    "barn owl", "barracuda", "basenji", "basking shark", "bearded dragon", "beaver", "blue jay", "blue whale", "bluetick
+  coonhound",
+    "bobcat", "bombay", "booby",
+    "bumblebee", "bullfrog", "bull shark", "bull terrier", "great white shark", "cairn terrier", "cassowary",
+    "t-rex", "stegosaurus", "catfish", "camel", "chamois", "caterpillar", "chicken", "chinchilla", "chipmunk",
+    "collared peccary", "colossal squid", "cichlid", "clownfish", "cuscus", "darwin's frog", "dhole", "discus",
+    "dodo", "dogue de bordeaux", "donkey", "dragonfly", "dormouse", "earwig", "echidna", "emperor tamarin",
+    "fishing cat", "flamingo", "fangtooth", "ferret", "gecko", "gila monster", "german shepherd", "gopher",
+    "grouse", "harpy eagle", "hippopotamus", "heron", "honey badger", "narwhal", "green anole",
+    "golden retriever", "lamprey", "kiwi", "mudskipper", "potoo", "mandarin fish", "lovebird",
+    "wigeon", "saola", "cuban snail", "bald ibis", "ploughshare tortoise", "resplendent quetza",
+    "angel shark", "golden-rumped elephant shrew", "peacock tarantula", "bumblebee", "dama gazelle",
+    "blue poison dart frog", "red-eyed tree frog", "golden poison frog", "chinese crested", "lilac-breasted roller",
+    "swallowtail butterfly", "california red-sided garter snake", "gouldian finch", "rosy maple moth", "mandarin duck",
+    "san francisco garter snake", "rainbow boa", "emerald tree boa", "jewel bug", "betta fish", "amur leopard",
+    "vaquita", "javan rhino", "baiji dolphin", "hirola", "fiery-throated hummingbird", "carnotaurus",
+    "madagascar pochard", "nile lechwe", "iberian lynx", "zebu", "yak", "scarlet macaw", "mandarin duck", "piebald peacock",
+    "rainbow lorikeet", "harlequin tuskfish", "electric blue gecko", "red panda", "killer whale",
+    "blue morpho butterfly", "red-eyed tree frog", "rainbow trout", "green anole", "doberman",
+    "leaf insect", "yellow tang", "rainbow bee-eater", "blue-ringed octopus", "budgerigar", "british timber",
+    "pink fairy armadillo", "ringtail possum",
+    "rice weevil", "centipede", "cockroach", "mosquito", "philippine eagle", "gharial",
+    "cleaner shrimp", "rain frog", "european pine marten", "european badger", "eurasian otter", "wolverine", "stoat",
+    "honey badger", "leaf sheep", "ocean angel", "palmato gecko", "muntjac deer", "cocker spaniel",
+    "java mouse-deer", "blue ridge two-lined salamander", "aardwolf", "numbat", "jack russel terrier", "chihuahua",
+    "whippet", "shih tzu", "eastern bluebird", "peregrine falcon",
+    "pug", "great dane", "schnauzer", "jellyfish", "horseshoe crab", "hedgehog",
+    "tyrannosaurus", "triceratops", "stegosaurus", "parasaurolophus", "harpy", "chimera",
+    "allosaurus", "brachiosaurus", "ankylosaurus", "utahraptor", "pterodactylus", "spinosaurus", "griffin",
+    "leafy sea dragon", "musk deer", "blue glaucus", "goldfinch", "spiny softshell turtle",
+    "american white pelican", "golden tortoise beetle", "indian painted grasshopper",
+    "cairns birdwing", "thorn treehopper", "spiny flower mantis", "european peacock butterfly", "lantern bug",
+    "malay lacewing", "rainbow stag beetle", "rosy maple moth", "tailed jay", "pygmy rabbit", "pygmy marmoset", "etruscan shrew",
+    "japanese serow", "azara's agouti", "black lemur", "prairie dog",
+    "dwarf mongoose", "reindeer", "european mink", "harvest mouse", "kulan", "patagonian mara", "przewalski's wild horse",
+    "pygmy marmoset", "wallaby", "takin", "vicuna", "white-face saki", "star-nosed mole", "snub-nosed monkey", "proboscis
+  monkey", "tapir"
+  ];
+  
+  const legs = [
+    "seal", "meerkat", "bear", "elephant", "gazelle",
+    "lion", "tiger", "wolf", "camel", "otter", "chameleon",
+    "large white pig", "wild boar", "nubian goat", "nigerian goat", "irish cob",
+    "arabian horse", "okapi", "maned wolf", "fosse", "slow lori", "angora rabbit",
+    "axolotl", "bearded vulture", "red panda", "cheetah", "glass frog", "mantis shrimp",
+    "sun bear", "aye-aye", "markhor", "saiga antelope", "sloth", "sea turtle",
+    "pangolin", "gharial", "marine iguana", "white tiger", "porcupine", "african crowned crane",
+    "african wild dog", "leopard", "bat-eared fox", "bongo", "orangutan", "sea lion", "caracal",
+    "giraffe", "rhino", "howler monkey", "mountain lion", "koala", "arctic fox", "panther",
+    "millipede", "aardvark", "afghan hound", "african civet", "african penguin", "akita", "anteater",
+    "arctic hare", "armadillo", "baboon", "barn owl", "bedlington terrier", "bison", "bobcat", "brown bear",
+    "budgerigar", "capybara", "cassowary", "clownfish", "coati", "common frog",
+    "cottontop tamarin", "coyote", "dachshund", "emu", "european hare", "fennec fox", "hammerhead shark",
+    "gemsbok", "golden pheasant", "common pheasant", "grasshopper", "pelican", "honey bee", "hoopoe bird", "jackal",
+    "king penguin", "komodo dragon", "ladybug", "ring-tailed lemur", "llama", "lynx", "japanese macaque",
+    "mountain goat", "tarantula", "opossum", "pine marten", "pirahna", "polar bear", "red squirrel",
+    "red fox", "kangaroo", "roborovski hamster", "ibis", "scarlet macaw", "seahorse", "secretary bird", "serval",
+    "snow leopard", "hyena", "toucan", "weasel", "wildebeest", "wolverine", "abyssinian", "affenpinscher",
+    "ainu dog", "airedale terrier", "giant tortoise", "river dolphin", "american bulldog", "clawed frog",
+    "angelfish", "ant", "appenzeller dog", "anteater", "arctic hare", "giant hornet", "cattle dog", "australian shepherd",
+    "barn owl", "barracuda", "basenji", "basking shark", "basset hound", "bearded dragon", "beaver", "bedlington terrier",
+    "bichon frise", "birman", "black russian terrier", "bloodhound", "blue jay", "blue whale", "bluetick coonhound",
+    "bobcat", "bombay", "booby", "border collie", "border terrier", "boston terrier", "boxer",
+    "bumblebee", "bullfrog", "bull shark", "bull terrier", "great white shark", "cairn terrier", "cassowary",
+    "t-rex", "stegosaurus", "catfish", "camel", "chamois", "caterpillar", "chicken", "chinchilla", "chipmunk",
+    "collared peccary", "colossal squid", "cichlid", "clownfish", "cuscus", "darwin's frog", "dhole", "discus",
+    "dodo", "dogue de bordeaux", "donkey", "dragonfly", "dormouse", "earwig", "echidna", "emperor tamarin",
+    "fishing cat", "flamingo", "fangtooth", "ferret", "gecko", "gila monster", "german shepherd", "gopher",
+    "grouse", "harpy eagle", "hippopotamus", "heron", "honey badger", "narwhal", "green anole",
+    "golden retriever", "lamprey", "kiwi", "mudskipper", "potoo", "mandarin fish", "lovebird",
+    "wigeon", "saola", "cuban snail", "bald ibis", "ploughshare tortoise", "resplendent quetza",
+    "angel shark", "golden-rumped elephant shrew", "peacock tarantula", "bumblebee", "dama gazelle",
+    "blue poison dart frog", "red-eyed tree frog", "golden poison frog", "chinese crested",
+    "mimic poison frog", "amazon milk frog", "dyeing dart frog", "phantasmal poison frog", "lilac-breasted roller",
+    "swallowtail butterfly", "california red-sided garter snake", "gouldian finch", "rosy maple moth", "mandarin duck",
+    "san francisco garter snake", "rainbow boa", "emerald tree boa", "jewel bug", "betta fish", "amur leopard",
+    "vaquita", "javan rhino", "baiji dolphin", "hirola", "fiery-throated hummingbird", "carnotaurus",
+    "madagascar pochard", "nile lechwe", "iberian lynx", "zebu", "yak", "scarlet macaw", "mandarin duck", "piebald peacock",
+    "rainbow lorikeet", "harlequin tuskfish", "electric blue gecko", "red panda", "killer whale",
+    "blue morpho butterfly", "red-eyed tree frog", "rainbow trout", "green anole", "doberman",
+    "leaf insect", "yellow tang", "rainbow bee-eater", "blue-ringed octopus", "budgerigar", "british timber",
+    "pink fairy armadillo", "ringtail possum",
+    "rice weevil", "centipede", "cockroach", "mosquito", "philippine eagle", "gharial",
+    "cleaner shrimp", "rain frog", "european pine marten", "european badger", "eurasian otter", "wolverine", "stoat",
+    "honey badger", "leaf sheep", "ocean angel", "palmato gecko", "muntjac deer", "cocker spaniel", "pit bull terrier",
+    "java mouse-deer", "blue ridge two-lined salamander", "aardwolf", "numbat", "jack russel terrier", "chihuahua",
+    "whippet", "shih tzu", "puli", "german shepherd", "eastern bluebird", "peregrine falcon",
+    "pug", "great dane", "schnauzer", "jellyfish", "horseshoe crab", "hedgehog",
+    "tyrannosaurus", "triceratops", "stegosaurus", "parasaurolophus", "harpy", "chimera",
+    "allosaurus", "brachiosaurus", "ankylosaurus", "utahraptor", "pterodactylus", "spinosaurus", "griffin",
+    "leafy sea dragon", "musk deer", "blue glaucus", "goldfinch", "spiny softshell turtle",
+    "american white pelican", "golden tortoise beetle", "indian painted grasshopper",
+    "cairns birdwing", "thorn treehopper", "spiny flower mantis", "european peacock butterfly", "lantern bug",
+    "malay lacewing", "rainbow stag beetle", "rosy maple moth", "tailed jay", "pygmy rabbit", "pygmy marmoset", "etruscan shrew",
+    "japanese serow", "azara's agouti", "black lemur", "prairie dog",
+    "dwarf mongoose", "reindeer", "european mink", "harvest mouse", "kulan", "patagonian mara", "przewalski's wild horse",
+    "pygmy marmoset", "wallaby", "takin", "vicuna", "white-face saki"
+  ];
+  
+  const feet = [
+    "seal", "meerkat", "bear", "elephant", "gazelle",
+    "lion", "tiger", "wolf", "camel", "otter", "chameleon",
+    "large white pig", "wild boar", "nubian goat", "nigerian goat", "irish cob",
+    "arabian horse", "okapi", "maned wolf", "fosse", "slow lori", "angora rabbit",
+    "axolotl", "bearded vulture", "red panda", "cheetah", "glass frog", "mantis shrimp",
+    "sun bear", "aye-aye", "markhor", "saiga antelope", "sloth", "sea turtle",
+    "pangolin", "gharial", "marine iguana", "white tiger", "porcupine", "african crowned crane",
+    "african wild dog", "leopard", "bat-eared fox", "bongo", "orangutan", "sea lion", "caracal",
+    "giraffe", "rhino", "howler monkey", "mountain lion", "koala", "arctic fox", "panther",
+    "millipede", "aardvark", "afghan hound", "african civet", "african penguin", "akita", "anteater",
+    "arctic hare", "armadillo", "baboon", "barn owl", "bedlington terrier", "bison", "bobcat", "brown bear",
+    "budgerigar", "capybara", "cassowary", "clownfish", "coati", "common frog",
+    "cottontop tamarin", "coyote", "dachshund", "emu", "european hare", "fennec fox", "hammerhead shark",
+    "gemsbok", "golden pheasant", "common pheasant", "grasshopper", "pelican", "honey bee", "hoopoe bird", "jackal",
+    "king penguin", "komodo dragon", "ladybug", "ring-tailed lemur", "llama", "lynx", "japanese macaque",
+    "mountain goat", "tarantula", "opossum", "pine marten", "pirahna", "polar bear", "red squirrel",
+    "red fox", "kangaroo", "roborovski hamster", "ibis", "scarlet macaw", "seahorse", "secretary bird", "serval",
+    "snow leopard", "hyena", "toucan", "weasel", "wildebeest", "wolverine", "abyssinian", "affenpinscher",
+    "ainu dog", "airedale terrier", "giant tortoise", "river dolphin", "american bulldog", "clawed frog",
+    "angelfish", "ant", "appenzeller dog", "anteater", "arctic hare", "giant hornet", "cattle dog", "australian shepherd",
+    "barn owl", "barracuda", "basenji", "basking shark", "basset hound", "bearded dragon", "beaver", "bedlington terrier",
+    "bichon frise", "birman", "black russian terrier", "bloodhound", "blue jay", "blue whale", "bluetick coonhound",
+    "bobcat", "bombay", "booby", "border collie", "border terrier", "boston terrier", "boxer",
+    "bumblebee", "bullfrog", "bull shark", "bull terrier", "great white shark", "cairn terrier", "cassowary",
+    "t-rex", "stegosaurus", "catfish", "camel", "chamois", "caterpillar", "chicken", "chinchilla", "chipmunk",
+    "collared peccary", "colossal squid", "cichlid", "clownfish", "cuscus", "darwin's frog", "dhole", "discus",
+    "dodo", "dogue de bordeaux", "donkey", "dragonfly", "dormouse", "earwig", "echidna", "emperor tamarin",
+    "fishing cat", "flamingo", "fangtooth", "ferret", "gecko", "gila monster", "german shepherd", "gopher",
+    "grouse", "harpy eagle", "hippopotamus", "heron", "honey badger", "narwhal", "green anole",
+    "golden retriever", "lamprey", "kiwi", "mudskipper", "potoo", "mandarin fish", "lovebird",
+    "wigeon", "saola", "cuban snail", "bald ibis", "ploughshare tortoise", "resplendent quetza",
+    "angel shark", "golden-rumped elephant shrew", "peacock tarantula", "bumblebee", "dama gazelle",
+    "blue poison dart frog", "red-eyed tree frog", "golden poison frog", "chinese crested",
+    "mimic poison frog", "amazon milk frog", "dyeing dart frog", "phantasmal poison frog", "lilac-breasted roller",
+    "swallowtail butterfly", "california red-sided garter snake", "gouldian finch", "rosy maple moth", "mandarin duck",
+    "san francisco garter snake", "rainbow boa", "emerald tree boa", "jewel bug", "betta fish", "amur leopard",
+    "vaquita", "javan rhino", "baiji dolphin", "hirola", "fiery-throated hummingbird", "carnotaurus",
+    "madagascar pochard", "nile lechwe", "iberian lynx", "zebu", "yak", "scarlet macaw", "mandarin duck", "piebald peacock",
+    "rainbow lorikeet", "harlequin tuskfish", "electric blue gecko", "red panda", "killer whale",
+    "blue morpho butterfly", "red-eyed tree frog", "rainbow trout", "green anole",
+    "leaf insect", "yellow tang", "rainbow bee-eater", "blue-ringed octopus",
+    "pink fairy armadillo", "ringtail possum",
+    "rice weevil", "centipede", "cockroach", "mosquito", "philippine eagle", "gharial",
+    "cleaner shrimp", "rain frog", "european pine marten", "european badger", "eurasian otter", "wolverine", "stoat",
+    "honey badger", "leaf sheep", "ocean angel", "palmato gecko", "muntjac deer", "cocker spaniel", "pit bull terrier",
+    "java mouse-deer", "blue ridge two-lined salamander", "aardwolf", "numbat", "jack russel terrier", "chihuahua",
+    "whippet", "shih tzu", "puli", "german shepherd", "eastern bluebird", "peregrine falcon",
+    "pug", "great dane", "schnauzer", "jellyfish", "horseshoe crab", "hedgehog",
+    "tyrannosaurus", "triceratops", "stegosaurus", "parasaurolophus", "harpy", "chimera",
+    "allosaurus", "brachiosaurus", "ankylosaurus", "utahraptor", "pterodactylus", "spinosaurus", "griffin",
+    "leafy sea dragon", "musk deer", "blue glaucus", "goldfinch", "spiny softshell turtle",
+    "american white pelican", "golden tortoise beetle", "indian painted grasshopper",
+    "cairns birdwing", "thorn treehopper", "spiny flower mantis", "european peacock butterfly", "lantern bug",
+    "japanese serow"
+  ];
+  
+  const tail = [
+    "seal", "meerkat", "bear", "elephant", "gazelle",
+    "lion", "tiger", "wolf", "camel", "otter", "chameleon",
+    "large white pig", "wild boar", "nubian goat", "nigerian goat", "irish cob",
+    "arabian horse", "okapi", "maned wolf", "fosse", "angora rabbit",
+    "axolotl", "red panda", "cheetah", "mantis shrimp", "sun bear", "aye-aye", "markhor", "saiga antelope",
+    "pangolin", "gharial", "marine iguana", "white tiger", "porcupine", "african crowned crane",
+    "african wild dog", "leopard", "bat-eared fox", "bongo", "orangutan", "sea lion", "caracal",
+    "giraffe", "rhino", "howler monkey", "mountain lion", "arctic fox",
+    "aardvark", "afghan hound", "african civet", "akita", "anteater",
+    "arctic hare", "armadillo", "bedlington terrier", "bison", "bobcat", "brown bear",
+    "clownfish", "coati", "cottontop tamarin", "coyote", "european hare", "fennec fox",
+    "gemsbok", "golden pheasant", "common pheasant", "grasshopper", "pelican", "honey bee", "hoopoe bird", "jackal",
+    "komodo dragon", "ladybug", "ring-tailed lemur", "llama", "lynx",
+    "mountain goat", "opossum", "pine marten", "pirahna", "polar bear", "red squirrel",
+    "red fox", "kangaroo", "roborovski hamster", "seahorse", "serval",
+    "snow leopard", "hyena", "toucan", "weasel", "wildebeest", "wolverine", "giant tortoise", "river dolphin", "anteater",
+  "arctic hare",
+    "barn owl", "barracuda", "basenji", "bearded dragon", "beaver", "bichon frise", "birman",
+    "t-rex", "stegosaurus", "catfish", "camel", "chamois", "caterpillar", "chicken", "chinchilla", "chipmunk",
+    "collared peccary", "colossal squid", "cichlid", "clownfish", "cuscus", "darwin's frog", "dhole", "discus", "donkey",
+  "dragonfly", "dormouse", "earwig", "echidna", "emperor tamarin",
+    "fishing cat", "flamingo", "fangtooth", "ferret", "gecko", "gila monster", "german shepherd", "gopher",
+    "grouse", "harpy eagle", "hippopotamus", "heron", "honey badger", "narwhal", "green anole",
+    "golden retriever", "lamprey", "kiwi", "mudskipper",
+    "wigeon", "saola", "cuban snail", "bald ibis", "ploughshare tortoise", "resplendent quetzal",
+    "angel shark", "golden-rumped elephant shrew", "peacock tarantula", "bumblebee", "dama gazelle",
+    "chinese crested", "lilac-breasted roller", "swallowtail butterfly", "california red-sided garter snake", "gouldian finch",
+  "rosy maple moth", "mandarin duck",
+    "san francisco garter snake", "rainbow boa", "emerald tree boa", "betta fish", "amur leopard",
+    "vaquita", "javan rhino", "baiji dolphin", "hirola", "fiery-throated hummingbird", "carnotaurus",
+    "madagascar pochard", "nile lechwe", "iberian lynx", "zebu", "yak", "scarlet macaw", "mandarin duck", "peacock",
+    "rainbow lorikeet", "harlequin tuskfish", "electric blue gecko", "red panda", "killer whale",
+    "blue morpho butterfly", "red-eyed tree frog", "rainbow trout", "green anole",
+    "leaf insect", "yellow tang", "rainbow bee-eater", "blue-ringed octopus", "budgerigar", "british timber",
+    "pink fairy armadillo", "ringtail possum", "philippine eagle", "gharial",
+    "cleaner shrimp", "rain frog", "european pine marten", "european badger", "eurasian otter", "wolverine", "stoat",
+    "honey badger", "leaf sheep", "ocean angel", "palmato gecko", "muntjac deer", "cocker spaniel", "pit bull terrier",
+    "java mouse-deer", "blue ridge two-lined salamander", "aardwolf", "numbat", "jack russel terrier", "chihuahua",
+    "spider monkey", "scorpion", "long-tailed widowbird", "indian giant squirrel", "turquoise-browed motmot", "greater
+  racket-tailed drongo",
+    "long-eared jerboa", "wilson's bird-of-paradise", "lady amherst's pheasant", "superb lyrebird", "raccoon", "bushy-tailed
+  mongoose",
+    "striped skunk", "binturong", "short-tailed shrew", "saluki", "alaskan malamute",
+    "japanese serow", "azara's agouti", "black lemur", "prairie dog",
+    "dwarf mongoose", "reindeer", "european mink", "harvest mouse", "kulan", "patagonian mara", "przewalski's wild horse",
+    "pygmy marmoset", "wallaby", "takin", "vicuna", "white-face saki"
+  ];
+  
+  const coat = [
+    "bear", "elephant",
+    "lion", "tiger", "wolf", "chameleon",
+    "large white pig", "wild boar", "nubian goat", "nigerian goat", "irish cob",
+    "okapi", "maned wolf", "angora rabbit",
+    "axolotl", "bearded vulture", "cheetah", "glass frog", "mantis shrimp",
+    "sun bear", "aye-aye", "markhor", "saiga antelope", "brown-throated sloth", "sea turtle",
+    "pangolin", "marine iguana", "white tiger", "porcupine", "african crowned crane",
+    "african wild dog", "leopard", "bat-eared fox", "bongo", "orangutan", "sea lion", "caracal",
+    "giraffe", "rhino", "howler monkey", "mountain lion", "koala", "arctic fox", "panther",
+    "millipede", "aardvark", "african civet", "african penguin", "anteater",
+    "arctic hare", "armadillo", "baboon", "bison", "bobcat", "brown bear",
+    "budgerigar", "capybara", "coati", "common frog",
+    "cottontop tamarin", "coyote", "emu", "european hare", "fennec fox", "hammerhead shark",
+    "gemsbok", "golden pheasant", "common pheasant", "grasshopper", "pelican", "honey bee", "hoopoe bird", "jackal",
+    "king penguin", "komodo dragon", "ladybug", "ring-tailed lemur", "llama", "lynx", "japanese macaque",
+    "mountain goat", "tarantula", "opossum", "pine marten", "pirahna", "polar bear", "red squirrel",
+    "red fox", "kangaroo", "roborovski hamster", "seahorse", "secretary bird", "serval",
+    "snow leopard", "hyena", "toucan", "weasel", "wildebeest",
+    "giant tortoise", "river dolphin",
+    "angelfish", "ant", "giant hornet",
+    "barn owl", "barracuda", "basking shark", "bearded dragon", "beaver", "cassowary",
+    "t-rex", "catfish", "camel", "chamois", "caterpillar", "chicken", "chinchilla", "chipmunk",
+    "collared peccary", "colossal squid", "cichlid", "clownfish", "cuscus", "darwin's frog", "dhole", "discus",
+    "dodo", "donkey", "dragonfly", "dormouse", "earwig", "echidna", "emperor tamarin",
+    "fishing cat", "flamingo", "fangtooth", "ferret", "gecko", "gila monster", "gopher",
+    "grouse", "harpy eagle", "hippopotamus", "heron", "narwhal",
+    "lamprey", "kiwi", "mudskipper", "potoo", "mandarin fish", "lovebird",
+    "wigeon", "saola", "cuban snail", "bald ibis", "ploughshare tortoise", "resplendent quetza",
+    "angel shark", "golden-rumped elephant shrew", "peacock tarantula", "bumblebee", "dama gazelle", "lilac-breasted roller",
+    "swallowtail butterfly", "california red-sided garter snake", "gouldian finch",
+    "san francisco garter snake", "rainbow boa", "emerald tree boa", "jewel bug", "betta fish", "amur leopard",
+    "vaquita", "javan rhino", "baiji dolphin", "hirola", "fiery-throated hummingbird", "carnotaurus",
+    "madagascar pochard", "nile lechwe", "iberian lynx", "zebu", "yak", "scarlet macaw", "mandarin duck", "piebald peacock",
+    "rainbow lorikeet", "harlequin tuskfish", "electric blue gecko", "red panda", "killer whale",
+    "blue morpho butterfly", "rainbow trout", "green anole",
+    "leaf insect", "yellow tang", "rainbow bee-eater", "blue-ringed octopus", "pink fairy armadillo", "ringtail possum",
+    "centipede", "philippine eagle", "gharial",
+    "cleaner shrimp", "european pine marten", "european badger", "eurasian otter", "wolverine", "stoat",
+    "honey badger", "leaf sheep", "ocean angel", "palmato gecko", "muntjac deer",
+    "java mouse-deer", "blue ridge two-lined salamander", "aardwolf", "numbat", "jellyfish", "horseshoe crab", "hedgehog",
+    "tyrannosaurus", "triceratops", "stegosaurus", "parasaurolophus", "chimera",
+    "allosaurus", "brachiosaurus", "ankylosaurus", "utahraptor", "pterodactylus", "spinosaurus", "griffin",
+    "leafy sea dragon", "musk deer", "blue glaucus", "goldfinch", "spiny softshell turtle",
+    "american white pelican", "golden tortoise beetle", "indian painted grasshopper",
+    "cairns birdwing", "thorn treehopper", "spiny flower mantis", "european peacock butterfly", "lantern bug",
+    "malay lacewing", "rainbow stag beetle", "rosy maple moth", "tailed jay", "pygmy rabbit", "pygmy marmoset", "etruscan shrew",
+    "highland cow", "silkie chicken", "musk ox", "norwegian forest cat", "polish buff laced chicken", "valais blacknose sheep",
+    "racka sheep", "bedlington terrier", "chinese crested", "afghan hound", "poodle", "shetland sheepdog", "schnauzer", "saluki",
+    "old english sheepdog", "irish wolfhound", "yorkshire terrier", "azara's agouti", "black lemur", "prairie dog",
+    "dwarf mongoose", "reindeer", "european mink", "harvest mouse", "kulan", "patagonian mara", "przewalski's wild horse",
+    "pygmy marmoset", "wallaby", "takin", "vicuna", "white-face saki", "tahr"
+  ];
+  
+  const colour = [
+    "meerkat", "dorcas gazelle", "dama gazelle", "lion", "tiger", "grey wolf", "camel", "sea otter",
+    "large white pig", "wild boar", "nubian goat", "nigerian goat", "irish cob",
+    "arabian horse", "okapi", "maned wolf", "fosse", "slow lori", "angora rabbit",
+    "axolotl", "bearded vulture", "red panda", "cheetah", "glass frog", "mantis shrimp",
+    "sun bear", "aye-aye", "markhor", "saiga antelope", "sloth", "sea turtle",
+    "pangolin", "gharial", "marine iguana", "white tiger", "porcupine", "african crowned crane",
+    "african wild dog", "leopard", "bat-eared fox", "bongo", "orangutan", "sea lion", "caracal",
+    "giraffe", "rhino", "howler monkey", "mountain lion", "koala", "arctic fox",
+    "african civet", "african penguin", "akita", "anteater",
+    "arctic hare", "armadillo", "baboon", "barn owl", "bison", "bobcat", "brown bear",
+    "budgerigar", "cassowary", "clownfish", "coati", "common frog",
+    "cottontop tamarin", "coyote", "dachshund", "emu", "european hare", "fennec fox",
+    "gemsbok", "golden pheasant", "common pheasant", "rainbow grasshopper", "pelican", "honey bee", "hoopoe bird", "jackal",
+    "king penguin", "komodo dragon", "ladybug", "ring-tailed lemur", "llama", "lynx", "japanese macaque",
+    "mountain goat", "tarantula", "opossum", "pine marten", "pirahna", "polar bear", "red squirrel",
+    "red fox", "kangaroo", "roborovski hamster", "ibis", "scarlet macaw", "seahorse", "secretary bird", "serval",
+    "snow leopard", "brown hyena", "keel billed toucan", "weasel", "wildebeest", "wolverine", "abyssinian",
+    "giant tortoise", "river dolphin", "clawed frog",
+    "royal angelfish", "ant", "anteater", "arctic hare", "giant hornet",
+    "barn owl", "barracuda", "basking shark", "bearded dragon", "beaver", "blue jay", "blue whale",
+    "bobcat", "bombay", "booby", "buff-tailed bumblebee", "bullfrog", "bull shark", "great white shark", "cassowary",
+    "t-rex", "stegosaurus", "catfish", "camel", "chamois", "caterpillar", "chicken", "chinchilla", "chipmunk",
+    "collared peccary", "colossal squid", "cichlid", "clownfish", "cuscus", "darwin's frog", "dhole", "discus",
+    "dodo", "donkey", "dragonfly", "dormouse", "earwig", "echidna", "emperor tamarin",
+    "fishing cat", "flamingo", "fangtooth", "ferret", "gecko", "gila monster", "german shepherd", "gopher",
+    "grouse", "harpy eagle", "hippopotamus", "heron", "honey badger", "narwhal", "green anole",
+    "golden retriever", "lamprey", "kiwi", "mudskipper", "potoo", "mandarin fish", "lovebird",
+    "wigeon", "saola", "cuban snail", "bald ibis", "ploughshare tortoise", "resplendent quetza",
+    "angel shark", "golden-rumped elephant shrew", "peacock tarantula", "dama gazelle",
+    "blue poison dart frog", "red-eyed tree frog", "golden poison frog", "chinese crested",
+    "mimic poison frog", "amazon milk frog", "dyeing dart frog", "phantasmal poison frog", "lilac-breasted roller",
+    "swallowtail butterfly", "california red-sided garter snake", "gouldian finch", "rosy maple moth", "mandarin duck",
+    "san francisco garter snake", "rainbow boa", "emerald tree boa", "jewel bug", "betta fish", "amur leopard",
+    "vaquita", "javan rhino", "baiji dolphin", "hirola", "fiery-throated hummingbird", "carnotaurus",
+    "madagascar pochard", "nile lechwe", "iberian lynx", "zebu", "yak", "mandarin duck", "peacock",
+    "rainbow lorikeet", "harlequin tuskfish", "electric blue gecko", "red panda", "killer whale",
+    "blue morpho butterfly", "red-eyed tree frog", "rainbow trout", "green anole", "doberman",
+    "leaf insect", "yellow tang", "rainbow bee-eater", "blue-ringed octopus", "budgerigar", "british timber",
+    "pink fairy armadillo", "ringtail possum",
+    "rice weevil", "centipede", "cockroach", "mosquito", "philippine eagle", "gharial",
+    "cleaner shrimp", "rain frog", "european pine marten", "european badger", "eurasian otter", "wolverine", "stoat",
+    "honey badger", "leaf sheep", "ocean angel", "palmato gecko", "muntjac deer",
+    "java mouse-deer", "blue ridge two-lined salamander", "aardwolf", "numbat", "eastern bluebird", "peregrine falcon",
+  "jellyfish", "horseshoe crab", "hedgehog",
+    "tyrannosaurus", "triceratops", "stegosaurus", "parasaurolophus", "harpy", "chimera",
+    "allosaurus", "brachiosaurus", "ankylosaurus", "utahraptor", "pterodactylus", "spinosaurus", "griffin",
+    "leafy sea dragon", "musk deer", "blue glaucus", "goldfinch", "spiny softshell turtle",
+    "american white pelican", "golden tortoise beetle", "indian painted grasshopper",
+    "cairns birdwing", "thorn treehopper", "spiny flower mantis", "european peacock butterfly", "lantern bug",
+    "malay lacewing", "rainbow stag beetle", "rosy maple moth", "tailed jay", "pygmy rabbit", "pygmy marmoset", "etruscan shrew",
+    "mandrill", "wattle-cup caterpillar", "greater earless lizard", "blue-ringed octopus", "mandarin fish", "peacock spider",
+    "lesser redpoll", "bullfinch", "golden oriole", "siskin", "green woodpecker", "capercaillie", "ring-necked parakeet",
+  "eurasian jay",
+    "blue tit", "kingfisher", "european bee-eater", "boeseman's rainbowfish", "cameroon dwarf gecko", "forest caterpillar
+  hunter",
+    "iridescent tiger beetle", "madagascan sunset moth", "orange-breasted sunbird", "painted bunting", "panther chameleon",
+    "parrotfish", "red-capped parrot", "sally lightfoot crab", "scarlet-chested parrot", "sun conure", "cortez rainbow wrasse",
+    "ornare wrasse", "zigzag wrasse", "yellow-banded poison dart frog", "resplendent quetzal", "oriental dwarf kingfisher",
+    "nicobar pigeon", "halloween crab", "pink-necked green pigeon", "spider-man agama", "violet-backed starling",
+    "black-browed barbet", "turquoise-browed motmot", "rosemary beetle", "paradise tanager", "flower hat jelly", "picasso bug",
+    "eastern collared lizard", "scarlet tanager", "blood-red glider", "scarlet peacock butterfly", "red milk snake",
+    "yellow cobra guppy", "fire skink", "common green forest lizard", "monarch butterfly", "clown nudibranch", "koi fish",
+    "european firebug", "ailanthus webworm moth", "venezuelan troupial", "sira poison dart frog", "yellowtail coris",
+    "western spindalis", "yellow boxfish", "climbing mantella", "yellow longnose butterflyfish", "banana nudibranch", "gold lace
+  nudibranch",
+    "great tit", "lemonpeel angelfish", "golden conure", "bluestripe snapper", "yellow-breasted chat", "green keel-bellied
+  lizard",
+    "green-headed tanager", "golden-tailed sapphire", "golden-fronted leafbird", "emerald tree monitor", "glorious scarab",
+    "common dolphinfish", "green terror cichlid", "leaf slug", "european green toad", "dogbane beetle", "inca jay", "blue tree
+  monitor",
+    "blue dacnis", "florida scrub-jay", "portuguese man o' war", "rainbow whiptail", "hyacinth macaw", "blue tang", "shining
+  honeycreeper",
+    "periander metalmark", "yellowstriped fairy basslet", "purple emperor", "purple grenadier", "purple gallinule", "royal
+  gramma",
+    "spanish shawl", "two spined anglefish", "purple firefish", "purple-crested turaco", "pink-headed warbler", "roseate
+  spoonbill",
+    "major mitchell's cockatoo", "bourke's parakeet", "common buckeye butterfly", "little bunting", "pied tamarin", "brown
+  trout",
+    "brown-winged kingfisher", "brown booby", "european fire-bellied toad", "brandt's cormorant", "african grey parrot", "lagoon
+  triggerfish",
+    "grey four-eyed opossum", "grey plover", "snow owl", "salt marsh moth", "dalmatian", "bernese mountain dog", "german
+  shepherd",
+    "beagle", "siberian husky", "catahoula", "zebra", "striped chipmunk", "spotted genet", "fallow deer", "axis deer",
+    "azara's agouti", "black lemur", "prairie dog",
+    "dwarf mongoose", "reindeer", "european mink", "harvest mouse", "kulan", "patagonian mara", "przewalski's wild horse",
+    "pygmy marmoset", "wallaby", "takin", "vicuna", "white-face saki"
+  ];
+  
+  const extras = [
+    "unicorn horn", "nose horn", "reindeer antlers", "long eyelashes",
+    "huge ears", "cactus spikes", "huge eyes", "piebaldism", "insect antennae", "moose antlers",
+    "bee stinger", "glowing eyes", "iridescence", "long whiskers", "fangs", "extra eyes",
+    "sheep horns", "albinism", "melanism", "spines along the back", "bioluminescent",
+    "erythrism", "heterochromia", "leucism", "xanthochromish", "hairless", "embedded gems", "plants", "mushrooms",
+    "alien antennae", "sparkles", "ear tufts", "dragon wings", "bird wings", "multiple tails", "long claws", "mane",
+    "fluffy cheeks", "fluffy ears", "colourful spots", "colourful stripes", "tusks", "roe deer antlers", "slime",
+    "ankole watusi horns", "gills", "anglerfish lure", "crest feathers", "none"
+  ];
+  
+  // 🕷️ Trigger words for warning
+  const arachnidTriggers = [
+    "spider", "tarantula", "whip spider", "arachnid",
+    "scorpion", "centipede", "millipede", "tick", "mite"
+  ];
+  
+  function showArachnophobiaWarning(animal) {
+    alert("WARNING: Arachnophobia generated");
+    console.warn("⚠️ Arachnophobia Warning Triggered for:", animal);
+  }
+  
+  function closeWarning() {
+    document.getElementById("warningOverlay").style.display = "none";
+  }
+  
+  function checkForArachnids(animal) {
+    return arachnidTriggers.some(trigger => animal.toLowerCase().includes(trigger));
+  }
+  
+  // Map part names to arrays
+  const partArrays = { head, ears, eyes, nose, legs, feet, tail, coat, colour };
+  
+  function generatePartWithAnimation(partName, elementId) {
+    const button = event.currentTarget;
+    const element = document.getElementById(elementId);
+    const arr = partArrays[partName];
+    button.disabled = true;
+    let count = 0;
+    const interval = setInterval(() => {
+      element.textContent = arr[Math.floor(Math.random() * arr.length)];
+      count++;
+      if (count > 20) {
+        clearInterval(interval);
+        const final = arr[Math.floor(Math.random() * arr.length)];
+        element.textContent = final;
+        button.disabled = false;
+        if (checkForArachnids(final)) showArachnophobiaWarning(final);
+      }
+    }, 20);
+  }
+  
+  function generateExtraWithAnimation(elementId) {
+    const button = event.currentTarget;
+    const element = document.getElementById(elementId);
+    button.disabled = true;
+    let count = 0;
+    const interval = setInterval(() => {
+      element.textContent = extras[Math.floor(Math.random() * extras.length)];
+      count++;
+      if (count > 20) {
+        clearInterval(interval);
+        element.textContent = extras[Math.floor(Math.random() * extras.length)];
+        button.disabled = false;
+      }
+    }, 20);
+  }
