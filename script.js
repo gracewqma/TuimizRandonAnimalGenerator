@@ -1,6 +1,6 @@
 const base = ["harvest mouse",
 "duck", "horse", "moose", "sheep", "crocodile", "bat",
-"seal", "monkey", "meerkat", "brown bear", ìsloth bearî "elephant","gazelle",
+"seal", "monkey", "meerkat", "brown bear", "sloth bear", "elephant","gazelle",
 "lion", "tiger", "wolf", "camel", "otter", "chameleon", "flamingo",
 "large white pig", "wild boar", "nubian goat", "nigerian goat", "irish cob",
 "arabian horse", "okapi", "maned wolf", "fosse", "slow lori", "angora rabbit",
