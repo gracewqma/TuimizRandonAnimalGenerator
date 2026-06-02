@@ -567,13 +567,12 @@
     return arachnidTriggers.some(trigger => animal.toLowerCase().includes(trigger));
   }
   
-  // Map part names to arrays
-  const partArrays = { head, ears, eyes, nose, legs, feet, tail, coat, colour };
+const partMap = [head, head, ears, eyes, nose, legs, feet, tail, coat, colour];
   
-  function generatePartWithAnimation(partName, elementId) {
-    const button = event.currentTarget;
-    const element = document.getElementById(elementId);
-    const arr = partArrays[partName];
+  function generateAnimalWithAnimation(index) {
+    const button = document.querySelector(`button[onclick='generateAnimalWithAnimation(${index})']`);
+    const element = document.getElementById(`num${index}`);
+    const arr = partMap[index];
     button.disabled = true;
     let count = 0;
     const interval = setInterval(() => {
@@ -589,9 +588,9 @@
     }, 20);
   }
   
-  function generateExtraWithAnimation(elementId) {
-    const button = event.currentTarget;
-    const element = document.getElementById(elementId);
+  function generateExtraWithAnimation(index) {
+    const button = document.querySelector(`button[onclick='generateExtraWithAnimation(${index})']`);
+    const element = document.getElementById(`num${index}`);
     button.disabled = true;
     let count = 0;
     const interval = setInterval(() => {
